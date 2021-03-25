@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hapn_app/views/my_drawer.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,27 +11,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "HAP",
-              style: TextStyle(
-                fontSize: 22.0
-              ),
+        centerTitle: true,
+        title: Text.rich(
+          TextSpan(
+            text: "HAP",
+            style: TextStyle(
+              fontSize: 22
             ),
-              Text(
-                "N",
+            children: [
+              TextSpan(
+                text: "N",
                 style: TextStyle(
-                  fontSize: 22.0,
+                  fontSize: 22,
                   color: Colors.blue
-                ),
-            )
-          ],
+                )
+              )
+            ]
+          )
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
+      drawer: MyDrawer(),
     );
   }
 }
