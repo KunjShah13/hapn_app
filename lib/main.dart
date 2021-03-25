@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:hapn_app/views/homepage.dart';
 
+
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -15,3 +16,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+  
