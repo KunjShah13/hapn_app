@@ -15,5 +15,5 @@ class News{
     this.date,
     this.claps
 });
-  
+
 }
