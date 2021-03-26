@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hapn_app/models/news.dart';
 import 'package:hapn_app/views/my_drawer.dart';
+import 'package:hapn_app/views/news_create.dart';
 import 'package:hapn_app/views/news_tile.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,28 +17,37 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text.rich(
-          TextSpan(
+        title: Text.rich(TextSpan(
             text: "HAP",
-            style: TextStyle(
-              fontSize: 22
-            ),
+            style: TextStyle(fontSize: 22),
             children: [
               TextSpan(
-                text: "N",
-                style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.blue
-                )
-              )
-            ]
-          )
-        ),
+                  text: "N", style: TextStyle(fontSize: 22, color: Colors.blue))
+            ])),
         backgroundColor: Colors.transparent,
         elevation: 3.0,
       ),
       drawer: MyDrawer(),
       body: NewsArticles(),
+
+      //Changes by Kunj
+
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            FloatingActionButton(
+              backgroundColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateNews()));
+              },
+              child: Icon(Icons.add),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -56,22 +67,16 @@ class _NewsArticlesState extends State<NewsArticles> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children:[
-        Container(
-          padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
-          child: Text(
-            "News Articles",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold
-            ),
-          ),
+    return ListView(children: [
+      
+      Container(
+        padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
+        child: Text(
+          "News Articles",
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
-        ...articles.map((article) =>
-            NewsTile(news: article))
-            .toList(),
-    ]
-    );
+      ),
+      ...articles.map((article) => NewsTile(news: article)).toList(),
+    ]);
   }
 }
