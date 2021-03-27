@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hapn_app/views/homepage.dart';
+import 'package:hapn_app/views/home_page.dart';
 import 'package:hapn_app/views/sdg.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -37,7 +37,6 @@ class MyDrawer extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // TODO Home screen
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => HomePage())
@@ -53,7 +52,7 @@ class MyDrawer extends StatelessWidget {
                 ),
                 SizedBox(width: 12,),
                 Text(
-                  "What are SDGs",
+                  "What are SDGs?",
                   style: TextStyle(
                       fontSize: 16
                   ),
@@ -61,7 +60,6 @@ class MyDrawer extends StatelessWidget {
               ],
             ),
            onTap: () {
-              // TODO Home screen
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => Sdg())

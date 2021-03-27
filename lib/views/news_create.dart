@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:hapn_app/controller/crud.dart';
+import 'package:hapn_app/controllers/crud.dart';
 import 'package:hapn_app/models/news.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:random_string/random_string.dart';
