@@ -1,20 +1,30 @@
-import 'package:flutter/cupertino.dart';
+import 'package:hapn_app/auth/firebaseAuth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:hapn_app/models/news.dart';
 import 'package:hapn_app/views/my_drawer.dart';
-import 'package:hapn_app/views/news_create.dart';
 import 'package:hapn_app/views/news_tile.dart';
+import 'package:hapn_app/views/news_create.dart';
 
 
 class HomePage extends StatefulWidget {
+  final User user;
+
+  const HomePage({Key key, this.user}) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
         title: Text.rich(TextSpan(
@@ -29,9 +39,6 @@ class _HomePageState extends State<HomePage> {
       ),
       drawer: MyDrawer(),
       body: NewsArticles(),
-
-      //Changes by Kunj
-
       floatingActionButton: Container(
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Row(
@@ -68,7 +75,6 @@ class _NewsArticlesState extends State<NewsArticles> {
   @override
   Widget build(BuildContext context) {
     return ListView(children: [
-      
       Container(
         padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
         child: Text(
