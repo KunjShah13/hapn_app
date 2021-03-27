@@ -161,8 +161,7 @@ class _CreateNewsState extends State<CreateNews> {
                           },
                         ),
                         TextField(
-                          decoration: InputDecoration(
-                              hintText: "Whatever"),
+                          decoration: InputDecoration(hintText: "Whatever"),
                           onChanged: (val) {
                             this.news.content = val;
                           },
