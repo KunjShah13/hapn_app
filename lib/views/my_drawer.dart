@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hapn_app/views/homepage.dart';
+import 'package:hapn_app/views/sdg.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -59,9 +60,12 @@ class MyDrawer extends StatelessWidget {
                 )
               ],
             ),
-            onTap: () {
-              // TODO What are SDGs
-              Navigator.pop(context);
+           onTap: () {
+              // TODO Home screen
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Sdg())
+              );
             },
           ),
           ListTile(
