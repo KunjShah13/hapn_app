@@ -160,6 +160,7 @@ class _CreateNewsState extends State<CreateNews> {
                             this.news.title = val;
                           },
                         ),
+                        Padding(padding: EdgeInsets.all(10)),
                         TextField(
                           decoration: InputDecoration(hintText: "Whatever"),
                           onChanged: (val) {

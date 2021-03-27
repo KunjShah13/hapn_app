@@ -50,7 +50,24 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  assets:
+    - imag/goal-01_480.png
+    - imag/goal-02_480.png
+    - imag/goal-03_480.png
+    - imag/goal-04_480.png
+    - imag/goal-05_480.png
+    - imag/goal-06_480.png
+    - imag/goal-07_480.png
+    - imag/goal-08_480.png
+    - imag/goal-09_480.png
+    - imag/goal-10_480.png
+    - imag/goal-11_480.png
+    - imag/goal-12_480.png
+    - imag/goal-13_480.png
+    - imag/goal-14_480.png
+    - imag/goal-15_480.png
+    - imag/goal-16_480.png
+    - imag/goal-17_480.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
