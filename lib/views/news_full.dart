@@ -1,25 +1,28 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hapn_app/models/news.dart';
 
 class FullArticle extends StatelessWidget {
-  final News news;
-
-  FullArticle({this.news});
+  //final News news;
+  //FullArticle({this.news});
+   String imgURL, title, content, author,claps;
+   FullArticle(
+      {@required this.author,
+      @required this.title,
+      @required this.content,
+      @required this.imgURL});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(news.title),
+        title: Text(title),
       ),
       body: ListView(
         children: [
           Hero(
-            tag: "${this.news.title}",
-            child: Image.network("https://picsum.photos/seed/${this.news.title}/400/200"), // Placeholder image
+            tag: "$title",
+            child: Image.network(imgURL), // Placeholder image
           ),
           Container(
             decoration: BoxDecoration(
@@ -34,7 +37,7 @@ class FullArticle extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       child: Text(
-                        this.news.title ?? "No title",
+                        title ?? "No title",
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold
@@ -44,7 +47,7 @@ class FullArticle extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
                       child: Text(
-                        this.news.author ?? "No author",
+                        author ?? "No author",
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.grey[500]
@@ -61,7 +64,7 @@ class FullArticle extends StatelessWidget {
                       Icon(Icons.favorite, size: 20),
                       SizedBox(width: 5,),
                       Text(
-                        this.news.claps.toString() ?? "0",
+                        claps.toString() ?? "0",
                         style: TextStyle(
                           fontSize: 18,
                         ),
@@ -75,7 +78,7 @@ class FullArticle extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(10),
             child: Text(
-              this.news.content ?? "No content",
+              content ?? "No content",
               style: TextStyle(
                 fontSize: 20
               ),
