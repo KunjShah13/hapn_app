@@ -1,15 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hapn_app/views/news_full.dart';
 
 class NewsTile extends StatelessWidget {
-  String imgURL, title, content, author, claps;
+  String imgURL, title, content, author;
+  int claps;
   //final News news;
   //NewsTile({this.news});
   NewsTile(
       {@required this.author,
       @required this.title,
       @required this.content,
-      @required this.imgURL});
+      @required this.imgURL,
+      @required this.claps});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +22,11 @@ class NewsTile extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => FullArticle(
-                      author: this.author,
-                      content: this.content,
-                      title: this.title,
-                      imgURL: this.imgURL,
-                    )));
+                    author: this.author,
+                    content: this.content,
+                    title: this.title,
+                    imgURL: this.imgURL,
+                    claps: this.claps)));
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(2, 10, 2, 2),
@@ -80,9 +83,12 @@ class NewsTile extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.favorite_outlined,
-                        size: 20,
+                      GestureDetector(
+                        onTap: () {},
+                        child: Icon(
+                          Icons.favorite_outlined,
+                          size: 20,
+                        ),
                       ),
                       SizedBox(
                         width: 5,
