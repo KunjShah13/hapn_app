@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hapn_app/models/news.dart';
 import 'package:hapn_app/views/news_full.dart';
 
 class NewsTile extends StatelessWidget {
-  final News news;
-  NewsTile({this.news});
+  String imgURL, title, content, author, claps;
+  //final News news;
+  //NewsTile({this.news});
+  NewsTile(
+      {@required this.author,
+      @required this.title,
+      @required this.content,
+      @required this.imgURL});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +18,18 @@ class NewsTile extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => FullArticle(news: this.news)));
+                builder: (context) => FullArticle(
+                      author: this.author,
+                      content: this.content,
+                      title: this.title,
+                      imgURL: this.imgURL,
+                    )));
       },
       child: Container(
         margin: EdgeInsets.fromLTRB(2, 10, 2, 2),
         padding: EdgeInsets.all(2),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(7)),
           color: Colors.grey[800],
           boxShadow: [
             BoxShadow(
@@ -34,8 +44,17 @@ class NewsTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
-                tag: '${this.news.title}',
-                child: Image.network(this.news.imageURL)),
+                tag: '$title',
+                child: Container(
+                  height: 300,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(7),
+                      child: Image.network(
+                        imgURL,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      )),
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,7 +63,7 @@ class NewsTile extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Text(
-                      this.news.title,
+                      title,
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
@@ -52,7 +71,7 @@ class NewsTile extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
                     child: Text(
-                      this.news.author,
+                      author,
                       style: TextStyle(fontSize: 16),
                     ),
                   )
@@ -69,7 +88,7 @@ class NewsTile extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        this.news.claps.toString(),
+                        claps.toString(),
                         style: TextStyle(fontSize: 18, color: Colors.grey[200]),
                       ),
                     ],

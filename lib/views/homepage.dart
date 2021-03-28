@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:hapn_app/models/news.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hapn_app/views/my_drawer.dart';
@@ -18,7 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final News news = new News();
+  //final News news = new News();
 
   CrudMethods crudMethods = new CrudMethods();
 
@@ -46,12 +45,19 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Padding(padding: EdgeInsets.fromLTRB(10, 20, 0, 15)),
                         ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             itemCount: snapshot.data.docs.length,
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return NewsTile(
-                                  news: snapshot.data.docs[index].data());
+                                  author: snapshot.data.docs[index]
+                                  .data()['author'],
+                              title: snapshot.data.docs[index].data()['title'],
+                              content:
+                                  snapshot.data.docs[index].data()['content'],
+                              imgURL:
+                                  snapshot.data.docs[index].data()['imgURL'],);
                             })
                       ]);
                   },
