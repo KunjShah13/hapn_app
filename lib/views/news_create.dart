@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:hapn_app/controllers/crud.dart';
-import 'package:hapn_app/models/news.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:random_string/random_string.dart';
 
@@ -12,7 +11,9 @@ class CreateNews extends StatefulWidget {
 }
 
 class _CreateNewsState extends State<CreateNews> {
-  final News news = new News();
+  // final News news = new News();
+  String author, title, content,imgUrl;
+  int claps;
 
   File selectedImage;
   bool _isLoading = false;
@@ -48,14 +49,15 @@ class _CreateNewsState extends State<CreateNews> {
 
       final UploadTask task = ref.putFile(selectedImage);
 
-      this.news.imageURL =
+      imgUrl =
           await (await task.whenComplete(() => null)).ref.getDownloadURL();
 
       Map<String, dynamic> newsMap = {
-        "imgURL": this.news.imageURL,
-        "author": this.news.author,
-        "title": this.news.title,
-        "content": this.news.content
+        "imgURL": imgUrl,
+        "author": author,
+        "title": title,
+        "content": content,
+        "claps": claps,
       };
 
       crudMethods.addData(newsMap).then((result) {
@@ -148,7 +150,7 @@ class _CreateNewsState extends State<CreateNews> {
                               hintText: "Author Name",
                               border: OutlineInputBorder()),
                           onChanged: (val) {
-                            this.news.author = val;
+                            author = val;
                           },
                         ),
                         Padding(padding: EdgeInsets.all(5)),
@@ -157,14 +159,14 @@ class _CreateNewsState extends State<CreateNews> {
                               hintText: "Title Name",
                               border: OutlineInputBorder()),
                           onChanged: (val) {
-                            this.news.title = val;
+                            title = val;
                           },
                         ),
                         Padding(padding: EdgeInsets.all(10)),
                         TextField(
                           decoration: InputDecoration(hintText: "Whatever"),
                           onChanged: (val) {
-                            this.news.content = val;
+                            content = val;
                           },
                         ),
                       ],

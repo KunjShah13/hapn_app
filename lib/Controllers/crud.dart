@@ -13,4 +13,12 @@ class CrudMethods {
   getData() async {
     return await FirebaseFirestore.instance.collection("articles").snapshots();
   }
+
+  deleteData() async {
+    return await FirebaseFirestore.instance
+        .collection("articles")
+        .doc()
+        .delete();
+  }
+
 }

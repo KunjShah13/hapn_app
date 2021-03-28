@@ -40,24 +40,30 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           "News Articles",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.w300, ),
+                            fontSize: 30,
+                            fontWeight: FontWeight.w300,
+                          ),
                           textAlign: TextAlign.left,
                         ),
                         Padding(padding: EdgeInsets.fromLTRB(10, 20, 0, 15)),
                         ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
+                            physics: NeverScrollableScrollPhysics(),
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             itemCount: snapshot.data.docs.length,
                             shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return NewsTile(
-                                  author: snapshot.data.docs[index]
-                                  .data()['author'],
-                              title: snapshot.data.docs[index].data()['title'],
-                              content:
-                                  snapshot.data.docs[index].data()['content'],
-                              imgURL:
-                                  snapshot.data.docs[index].data()['imgURL'],);
+                                author:
+                                    snapshot.data.docs[index].data()['author'],
+                                title:
+                                    snapshot.data.docs[index].data()['title'],
+                                content:
+                                    snapshot.data.docs[index].data()['content'],
+                                imgURL:
+                                    snapshot.data.docs[index].data()['imgURL'],
+                                claps:
+                                    snapshot.data.docs[index].data()['claps'],
+                              );
                             })
                       ]);
                   },
