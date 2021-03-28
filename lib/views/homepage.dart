@@ -1,12 +1,11 @@
-import 'package:hapn_app/auth/firebaseAuth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:hapn_app/models/news.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
-import 'package:hapn_app/models/news.dart';
 import 'package:hapn_app/views/my_drawer.dart';
 import 'package:hapn_app/views/news_tile.dart';
 import 'package:hapn_app/views/news_create.dart';
-
+import 'package:hapn_app/controllers/crud.dart';
 
 class HomePage extends StatefulWidget {
   final User user;
@@ -19,7 +18,62 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final News news = new News();
+
+  CrudMethods crudMethods = new CrudMethods();
+
+  Stream articleStream =
+      FirebaseFirestore.instance.collection('articles').snapshots();
+
+  Widget newsArticles() {
+    return ListView(children: [
+      articleStream != null
+          ? Column(
+              children: <Widget>[
+                StreamBuilder(
+                  stream: articleStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.data == null)
+                      return CircularProgressIndicator();
+                    else
+                      return Column(children: [
+                        Padding(padding: EdgeInsets.all(20)),
+                        Text(
+                          "News Articles",
+                          style: TextStyle(
+                              fontSize: 30, fontWeight: FontWeight.w300, ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Padding(padding: EdgeInsets.fromLTRB(10, 20, 0, 15)),
+                        ListView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            itemCount: snapshot.data.docs.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return NewsTile(
+                                  news: snapshot.data.docs[index].data());
+                            })
+                      ]);
+                  },
+                )
+              ],
+            )
+          : Container(
+              alignment: Alignment.center,
+              child: CircularProgressIndicator(),
+            ),
+    ]);
+  }
+
+  @override
+  void initState() {
+    crudMethods.getData().then((result) {
+      setState(() {
+        articleStream = result;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +92,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 3.0,
       ),
       drawer: MyDrawer(),
-      body: NewsArticles(),
+      body: newsArticles(),
       floatingActionButton: Container(
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Row(
@@ -56,33 +110,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-}
-
-class NewsArticles extends StatefulWidget {
-  @override
-  _NewsArticlesState createState() => _NewsArticlesState();
-}
-
-class _NewsArticlesState extends State<NewsArticles> {
-  final List<News> articles = [
-    News(title: "Title 1", author: "Author", claps: 5),
-    News(title: "Title 2", author: "Author", claps: 4),
-    News(title: "Title 3", author: "Author", claps: 3),
-    News(title: "Title 4", author: "Author", claps: 2),
-  ]; // Temporary list, actual data from firestore
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(children: [
-      Container(
-        padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
-        child: Text(
-          "News Articles",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-      ),
-      ...articles.map((article) => NewsTile(news: article)).toList(),
-    ]);
   }
 }

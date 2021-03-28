@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:hapn_app/controller/crud.dart';
+import 'package:hapn_app/controllers/crud.dart';
 import 'package:hapn_app/models/news.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:random_string/random_string.dart';
@@ -51,7 +51,7 @@ class _CreateNewsState extends State<CreateNews> {
       this.news.imageURL =
           await (await task.whenComplete(() => null)).ref.getDownloadURL();
 
-      Map<String, String> newsMap = {
+      Map<String, dynamic> newsMap = {
         "imgURL": this.news.imageURL,
         "author": this.news.author,
         "title": this.news.title,

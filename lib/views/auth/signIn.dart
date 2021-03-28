@@ -104,7 +104,8 @@ class _SignInState extends State<SignIn> {
     } catch (e) {
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Email & Password"),
+        content: Text("Failed to sign in with Email & Password")
+        ,
       ));
     }
   }

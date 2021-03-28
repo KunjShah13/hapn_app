@@ -4,7 +4,6 @@ import 'package:hapn_app/views/news_full.dart';
 
 class NewsTile extends StatelessWidget {
   final News news;
-
   NewsTile({this.news});
 
   @override
@@ -31,15 +30,12 @@ class NewsTile extends StatelessWidget {
             ),
           ],
         ),
-        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
                 tag: '${this.news.title}',
-                child: Image.network(
-                    "https://picsum.photos/seed/${this.news.title}/400/200") // Placeholder image
-                ),
+                child: Image.network(this.news.imageURL)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

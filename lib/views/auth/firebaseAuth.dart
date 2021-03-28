@@ -1,5 +1,5 @@
-import 'package:hapn_app/auth/register.dart';
-import 'package:hapn_app/auth/signIn.dart';
+import 'package:hapn_app/views/auth/register.dart';
+import 'package:hapn_app/views/auth/signIn.dart';
 import 'package:flutter/material.dart';
 
 class FirebaseAuthDemo extends StatefulWidget {
@@ -12,7 +12,16 @@ class _FirebaseAuthDemoState extends State<FirebaseAuthDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HapN"),
+        centerTitle: true,
+        title: Text.rich(TextSpan(
+            text: "HAP",
+            style: TextStyle(fontSize: 22),
+            children: [
+              TextSpan(
+                  text: "N", style: TextStyle(fontSize: 22, color: Colors.blue))
+            ])),
+        backgroundColor: Colors.transparent,
+        elevation: 3.0,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,7 +29,9 @@ class _FirebaseAuthDemoState extends State<FirebaseAuthDemo> {
         children: <Widget>[
           Container(
             child: OutlinedButton(
-              child: Text("Sign in"),
+              child: Text(
+                "Sign in",
+              ),
               onPressed: () => _pushPage(context, SignIn()),
             ),
             padding: const EdgeInsets.all(16),
