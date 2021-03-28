@@ -31,11 +31,11 @@ class _SdgState extends State<Sdg> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Hapn",
+              "HAPN",
               style: TextStyle(fontSize: 22),
             ),
             Text(
-              "Up",
+              "UP",
               style: TextStyle(fontSize: 22, color: Colors.blue),
             )
           ],

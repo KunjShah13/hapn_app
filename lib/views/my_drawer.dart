@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hapn_app/views/home_page.dart';
+import 'package:hapn_app/views/homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hapn_app/views/auth/firebaseAuth.dart';
 import 'package:hapn_app/views/sdg.dart';
+
+FirebaseAuth _auth = FirebaseAuth.instance;
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -12,13 +16,9 @@ class MyDrawer extends StatelessWidget {
           DrawerHeader(
             child: Text(
               "HAPN",
-              style: TextStyle(
-                  fontSize: 22
-              ),
+              style: TextStyle(fontSize: 22),
             ),
-            decoration: BoxDecoration(
-                color: Colors.blue
-            ),
+            decoration: BoxDecoration(color: Colors.blue),
           ),
           ListTile(
             title: Row(
@@ -27,20 +27,18 @@ class MyDrawer extends StatelessWidget {
                   Icons.home,
                   size: 22,
                 ),
-                SizedBox(width: 12,),
+                SizedBox(
+                  width: 12,
+                ),
                 Text(
                   "Home",
-                  style: TextStyle(
-                      fontSize: 16
-                  ),
+                  style: TextStyle(fontSize: 16),
                 )
               ],
             ),
             onTap: () {
               Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage())
-              );
+                  context, MaterialPageRoute(builder: (context) => HomePage()));
             },
           ),
           ListTile(
@@ -50,20 +48,18 @@ class MyDrawer extends StatelessWidget {
                   Icons.nature,
                   size: 22,
                 ),
-                SizedBox(width: 12,),
+                SizedBox(
+                  width: 12,
+                ),
                 Text(
                   "What are SDGs?",
-                  style: TextStyle(
-                      fontSize: 16
-                  ),
+                  style: TextStyle(fontSize: 16),
                 )
               ],
             ),
-           onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Sdg())
-              );
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Sdg()));
             },
           ),
           ListTile(
@@ -73,12 +69,12 @@ class MyDrawer extends StatelessWidget {
                   Icons.info_outline,
                   size: 22,
                 ),
-                SizedBox(width: 12,),
+                SizedBox(
+                  width: 12,
+                ),
                 Text(
                   "About",
-                  style: TextStyle(
-                      fontSize: 16
-                  ),
+                  style: TextStyle(fontSize: 16),
                 )
               ],
             ),
@@ -87,10 +83,32 @@ class MyDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-
-
+          ListTile(
+              title: Row(
+                children: [
+                  Icon(
+                    Icons.arrow_forward_sharp,
+                    size: 22,
+                  ),
+                  SizedBox(width: 12),
+                  Text(
+                    "Sign Out",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+              onTap: () {
+                _signOut().whenComplete(() {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FirebaseAuthDemo()));
+                });
+              }),
         ],
       ),
     );
+  }
+
+  Future _signOut() async {
+    await _auth.signOut();
   }
 }

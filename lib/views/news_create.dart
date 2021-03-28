@@ -51,7 +51,7 @@ class _CreateNewsState extends State<CreateNews> {
       this.news.imageURL =
           await (await task.whenComplete(() => null)).ref.getDownloadURL();
 
-      Map<String, String> newsMap = {
+      Map<String, dynamic> newsMap = {
         "imgURL": this.news.imageURL,
         "author": this.news.author,
         "title": this.news.title,
