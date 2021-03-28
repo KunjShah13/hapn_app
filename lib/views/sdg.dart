@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hapn_app/views/my_drawer.dart';
 import 'package:hapn_app/views/sdg_pages/Page1details.dart';
 import 'package:hapn_app/views/sdg_pages/Page2Details.dart';
 import 'package:hapn_app/views/sdg_pages/Page3Details.dart';
@@ -31,17 +32,18 @@ class _SdgState extends State<Sdg> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "HAPN",
+              "HAP",
               style: TextStyle(fontSize: 22),
             ),
             Text(
-              "UP",
+              "N",
               style: TextStyle(fontSize: 22, color: Colors.blue),
             )
           ],
         ),
         backgroundColor: Colors.transparent,
       ),
+      drawer: MyDrawer(),
       body: GridView.count(
         crossAxisCount: 2,
         children: <Widget>[
