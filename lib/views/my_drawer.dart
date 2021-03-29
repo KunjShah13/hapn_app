@@ -80,7 +80,6 @@ class MyDrawer extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // TODO About screen
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => AboutApp())
@@ -103,8 +102,8 @@ class MyDrawer extends StatelessWidget {
               ),
               onTap: () {
                 _signOut().whenComplete(() {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => FirebaseAuthDemo()));
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                      builder: (context) => FirebaseAuthDemo()), (route) => false);
                 });
               }),
         ],
