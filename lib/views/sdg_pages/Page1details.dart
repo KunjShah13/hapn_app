@@ -21,7 +21,7 @@ class Page1 extends StatelessWidget {
                       child: Hero(
                         tag: 'goal-1',
                         child: Image.asset(
-                          ('imag/goal-01_480.png'), ////////////////////////////Image
+                          ('imag/goal-01_480.png'), // Image
                           fit: BoxFit.cover,
                         ),
                       ),

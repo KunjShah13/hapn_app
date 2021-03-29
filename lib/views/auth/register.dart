@@ -30,7 +30,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Center(
           child: Form(
               key: _formKey,
@@ -78,9 +78,10 @@ class _RegisterState extends State<Register> {
                         },
                         obscureText: true,
                       ),
+                      SizedBox(height: 20,),
                       Container(
                           padding: EdgeInsets.symmetric(horizontal: 20),
-                          height: 600,
+                          height: 180,
                           child:
                           Column(
                             children: [
@@ -107,7 +108,6 @@ class _RegisterState extends State<Register> {
                           )
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
                         alignment: Alignment.center,
                         child: OutlinedButton(
                           child: Text("register"),

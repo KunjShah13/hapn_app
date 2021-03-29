@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
               ],
             )
           : Container(
+              padding: EdgeInsets.all(50),
               alignment: Alignment.center,
               child: CircularProgressIndicator(),
             ),
