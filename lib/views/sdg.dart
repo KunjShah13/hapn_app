@@ -29,13 +29,9 @@ class _SdgState extends State<Sdg> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text.rich(TextSpan(
-            text: "HAP",
-            style: TextStyle(fontSize: 22),
-            children: [
-              TextSpan(
-                  text: "N", style: TextStyle(fontSize: 22, color: Colors.blue))
-            ])),
+        title: Text(
+          "SDGs"
+        ),
         backgroundColor: Colors.transparent,
       ),
       drawer: MyDrawer(),

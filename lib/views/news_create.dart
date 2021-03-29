@@ -57,7 +57,7 @@ class _CreateNewsState extends State<CreateNews> {
         "author": author,
         "title": title,
         "content": content,
-        "claps": claps,
+        "claps": claps ?? 0,
       };
 
       crudMethods.addData(newsMap).then((result) {
@@ -92,18 +92,19 @@ class _CreateNewsState extends State<CreateNews> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.file_upload),
+              child: Icon(Icons.file_upload, color: Colors.blue,),
             ),
           )
         ],
       ),
       body: _isLoading
           ? Container(
+              padding: EdgeInsets.all(50),
               alignment: Alignment.center,
               child: CircularProgressIndicator(),
             )
           : Container(
-              child: Column(
+              child: ListView(
                 children: <Widget>[
                   SizedBox(
                     height: 10,
