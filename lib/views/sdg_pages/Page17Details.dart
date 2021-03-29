@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page5 extends StatelessWidget {
-
-
+class Page17 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page5 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-5',child: Image.asset(
-                        ('imag/goal-05_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-17',
+                        child: Image.asset(
+                          ('image/goal-17_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page5 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page5 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page5 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Achieve gender equality and empower all women and girls.',
+                'Strengthen the means of implementation and revitalize the global partnership for sustainable development',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page5 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'If you are a girl, you can stay in school, help empower your female classmates to do the same, and fight for your right to access sexual and reproductive health services. If you are a woman, you can address unconscious biases and implicit associations that form an unintended and often an invisible barrier to equal opportunity. If you are a man or a boy, you can work alongside women and girls to achieve gender equality and embrace healthy, respectful relationships. You can fund education campaigns to curb cultural practices like female genital mutilation and change harmful laws that limit the rights of women and girls and prevent them from achieving their full potential.',
+                'Join or create a group in your local community that seeks to mobilize action on the implementation of the SDGs. Encourage your governments to partner with businesses for the implementation of the SDGs.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page5 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page15 extends StatelessWidget {
-
-
+class Page14 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page15 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-15',child: Image.asset(
-                        ('imag/goal-15_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-14',
+                        child: Image.asset(
+                          ('image/goal-14_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page15 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page15 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,8 +78,8 @@ class Page15 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-            'Protect, restore, and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss'
-                ,style: TextStyle(
+                'Conserve and sustainably use the oceans, seas, and marine resources for sustainable development',
+                style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
                 ),
@@ -93,14 +88,7 @@ class Page15 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Some things we can do to help include recycling, eating a local-based diet that is sustainably sourced, and consuming only what we need. We must be respectful toward wildlife and only take part in ecotourism opportunities that are responsibly and ethically run in order to prevent wildlife disturbance. Well-managed protected areas support healthy ecosystems, which in turn keep people healthy. It is therefore critical to secure the involvement of the local communities in the development and management of these protected areas.',
-
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-              Text(
-                'As a result, startups that can demonstrate scalable reforestation strategies or other terrestrial ecosystems preservation technologies are of huge interest to governments and industry alike, each of which are eager to identify investment strategies that can prove to be sustainable from both an environmental and financial perspective.',
+                'For open ocean and deep sea areas, sustainability can be achieved only through increased international cooperation to protect vulnerable habitats. Establishing comprehensive, effective, and equitably managed systems of government-protected areas should be pursued to conserve biodiversity and ensure a sustainable future for the fishing industry. On a local level, we should make ocean-friendly choices when buying products or eating food derived from oceans and consume only what we need. Selecting certified products is a good place to start. We should eliminate plastic usage as much as possible and organize beach clean-ups. Most importantly, we can spread the message about how important marine life is and why we need to protect it.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -108,13 +96,6 @@ class Page15 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

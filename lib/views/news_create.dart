@@ -92,7 +92,7 @@ class _CreateNewsState extends State<CreateNews> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.file_upload, color: Colors.blue,),
+              child: Icon(Icons.file_upload),
             ),
           )
         ],

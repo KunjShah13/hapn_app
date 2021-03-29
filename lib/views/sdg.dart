@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:hapn_app/views/my_drawer.dart';
-import 'package:hapn_app/views/sdg_pages/Page1details.dart';
+import 'package:hapn_app/views/sdg_pages/Page1Details.dart';
 import 'package:hapn_app/views/sdg_pages/Page2Details.dart';
 import 'package:hapn_app/views/sdg_pages/Page3Details.dart';
-import 'package:hapn_app/views/sdg_pages/Page4D.dart';
-import 'package:hapn_app/views/sdg_pages/Page5D.dart';
-import 'package:hapn_app/views/sdg_pages/Page6D.dart';
-import 'package:hapn_app/views/sdg_pages/Page7D.dart';
-import 'package:hapn_app/views/sdg_pages/Page8D.dart';
-import 'package:hapn_app/views/sdg_pages/Page9D.dart';
-import 'package:hapn_app/views/sdg_pages/Page10D.dart';
-import 'package:hapn_app/views/sdg_pages/Page11D.dart';
-import 'package:hapn_app/views/sdg_pages/Page12D.dart';
-import 'package:hapn_app/views/sdg_pages/Page13D.dart';
-import 'package:hapn_app/views/sdg_pages/Page14D.dart';
-import 'package:hapn_app/views/sdg_pages/Page15D.dart';
-import 'package:hapn_app/views/sdg_pages/Page16D.dart';
-import 'package:hapn_app/views/sdg_pages/Page17D.dart';
+import 'package:hapn_app/views/sdg_pages/Page4Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page5Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page6Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page7Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page8Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page9Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page10Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page11Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page12Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page13Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page14Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page15Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page16Details.dart';
+import 'package:hapn_app/views/sdg_pages/Page17Details.dart';
 
 class Sdg extends StatefulWidget {
   @override
@@ -29,9 +29,7 @@ class _SdgState extends State<Sdg> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          "SDGs"
-        ),
+        title: Text("SDGs"),
         backgroundColor: Colors.transparent,
       ),
       drawer: MyDrawer(),
@@ -53,7 +51,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-01_480.png'),
+                        image: AssetImage('image/goal-01_480.png'),
                       ),
                     ),
                   )
@@ -76,7 +74,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-02_480.png'),
+                        image: AssetImage('image/goal-02_480.png'),
                       ),
                     ),
                   )
@@ -98,9 +96,9 @@ class _SdgState extends State<Sdg> {
                     tag: 'goal-3',
                     child: Material(
                       child: Ink.image(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage('imag/goal-03_480.png'),
-                        ),
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-03_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -122,7 +120,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-04_480.png'),
+                        image: AssetImage('image/goal-04_480.png'),
                       ),
                     ),
                   )
@@ -145,7 +143,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-05_480.png'),
+                        image: AssetImage('image/goal-05_480.png'),
                       ),
                     ),
                   )
@@ -166,10 +164,10 @@ class _SdgState extends State<Sdg> {
                   Hero(
                     tag: 'goal-6',
                     child: Material(
-                      child:Ink.image(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage('imag/goal-06_480.png'),
-                        ),
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-06_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -191,7 +189,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-07_480.png'),
+                        image: AssetImage('image/goal-07_480.png'),
                       ),
                     ),
                   )
@@ -214,8 +212,8 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-08_480.png'),
-                    ),
+                        image: AssetImage('image/goal-08_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -237,7 +235,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-09_480.png'),
+                        image: AssetImage('image/goal-09_480.png'),
                       ),
                     ),
                   )
@@ -256,14 +254,13 @@ class _SdgState extends State<Sdg> {
                 alignment: Alignment.center,
                 children: <Widget>[
                   Hero(
-                    tag: 'goal-10',
-                    child: Material(
-                      child: Ink.image(
-                        fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-10_480.png'),
-                      ),
-                    )
-                  )
+                      tag: 'goal-10',
+                      child: Material(
+                        child: Ink.image(
+                          fit: BoxFit.fitWidth,
+                          image: AssetImage('image/goal-10_480.png'),
+                        ),
+                      ))
                 ],
               ),
             ),
@@ -283,7 +280,7 @@ class _SdgState extends State<Sdg> {
                     child: Material(
                       child: Ink.image(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage('imag/goal-11_480.png'),
+                        image: AssetImage('image/goal-11_480.png'),
                       ),
                     ),
                   )
@@ -303,9 +300,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-12',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-12_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-12_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -324,9 +323,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-13',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-13_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-13_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -345,9 +346,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-14',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-14_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-14_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -366,9 +369,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-15',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-15_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-15_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -387,9 +392,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-16',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-16_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-16_480.png'),
+                      ),
                     ),
                   )
                 ],
@@ -408,9 +415,11 @@ class _SdgState extends State<Sdg> {
                 children: <Widget>[
                   Hero(
                     tag: 'goal-17',
-                    child: Ink.image(
-                      fit: BoxFit.fitWidth,
-                      image: AssetImage('imag/goal-17_480.png'),
+                    child: Material(
+                      child: Ink.image(
+                        fit: BoxFit.fitWidth,
+                        image: AssetImage('image/goal-17_480.png'),
+                      ),
                     ),
                   )
                 ],

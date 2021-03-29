@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page16 extends StatelessWidget {
-
-
+class Page15 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page16 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-16',child: Image.asset(
-                        ('imag/goal-16_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-15',
+                        child: Image.asset(
+                          ('image/goal-15_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page16 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page16 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page16 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels',
+                'Protect, restore, and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,13 @@ class Page16 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Exercise your right to hold your elected officials accountable. Exercise your right to freedom of information and share your opinion with your elected representatives. Promote inclusion and respect towards people of different ethnic origins, religions, gender, sexual orientations, or different opinions. Together, we can help to improve conditions for a life of dignity for all.',
+                'Some things we can do to help include recycling, eating a local-based diet that is sustainably sourced, and consuming only what we need. We must be respectful toward wildlife and only take part in ecotourism opportunities that are responsibly and ethically run in order to prevent wildlife disturbance. Well-managed protected areas support healthy ecosystems, which in turn keep people healthy. It is therefore critical to secure the involvement of the local communities in the development and management of these protected areas.',
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              Text(
+                'As a result, startups that can demonstrate scalable reforestation strategies or other terrestrial ecosystems preservation technologies are of huge interest to governments and industry alike, each of which are eager to identify investment strategies that can prove to be sustainable from both an environmental and financial perspective.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +102,6 @@ class Page16 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

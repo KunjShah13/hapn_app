@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page7 extends StatelessWidget {
-
-
+class Page12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page7 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-7',child: Image.asset(
-                        ('imag/goal-07_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-12',
+                        child: Image.asset(
+                          ('image/goal-12_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page7 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page7 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page7 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Ensure access to affordable, reliable, sustainable, and modern energy for all.',
+                'Ensure sustainable consumption and production patterns',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page7 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Countries can accelerate the transition to an affordable, reliable, and sustainable energy system by investing in renewable energy resources, prioritizing energy efficient practices, and adopting clean energy technologies and infrastructure. Businesses can maintain and protect ecosystems and commit to sourcing 100% of operational electricity needs from renewable sources. Employers can reduce the internal demand for transport by prioritizing telecommunications and incentivize less energy intensive modes such as train travel over auto and air travel. Investors can invest more in sustainable energy services, bringing new technologies to the market quickly from a diverse supplier base. You can save electricity by plugging appliances into a power strip and turning them off completely when not in use, including your computer. You can also bike, walk, or take public transport to reduce carbon emissions.',
+                'There are two main ways to help: 1. Reducing your waste and 2. Being thoughtful about what you buy and choosing a sustainable option whenever possible. Ensure you don’t throw away food, and reduce your consumption of plastic - one of the main pollutants of the ocean. Carrying a reusable bag, refusing to use plastic straws, and recycling plastic bottles are good ways to do your part every day. Making informed purchases also helps. For example, the textile industry today is the second largest polluter of clean water after agriculture, and many fashion companies exploit textile workers in the developing world. If you can buy from sustainable and local sources, you can make a difference as well as exercising pressure on businesses to adopt sustainable practices.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page7 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

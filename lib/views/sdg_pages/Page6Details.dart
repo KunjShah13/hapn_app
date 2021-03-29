@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page10 extends StatelessWidget {
-
-
+class Page6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page10 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-10',child: Image.asset(
-                        ('imag/goal-10_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-6',
+                        child: Image.asset(
+                          ('image/goal-06_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page10 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page10 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page10 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Reduce inequality within and among countries',
+                'Ensure availability and sustainable management of water and sanitation for all',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page10 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Reducing inequality requires transformative change. Greater efforts are needed to eradicate extreme poverty and hunger, and invest more in health, education, social protection, and decent jobs - especially for young people, migrants and refugees and other vulnerable communities. Within countries, it is important to empower and promote inclusive social and economic growth. We can ensure equal opportunity and reduce inequalities of income if we eliminate discriminatory laws, policies, and practices. Among countries, we need to ensure that developing countries are better represented in decision-making on global issues so that solutions can be more effective, credible, and accountable. Governments and other stakeholders can also promote safe, regular, and responsible migration, including through planned and well-managed policies for the millions of people who have left their homes seeking better lives due to war, discrimination, poverty, lack of opportunity, and other drivers of migration.',
+                'Civil society organizations should work to keep governments accountable, invest in water research and development, and promote the inclusion of women, youth, and indigenous communities in water resources governance. Generating awareness of these roles and turning them into action will lead to win-win results and increased sustainability and integrity for both human and ecological systems. You can also get involved in the World Water Day and World Toilet Day campaigns that aim to provide information and inspiration to take action on hygiene issues.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page10 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),
