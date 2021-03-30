@@ -31,31 +31,37 @@ class FullArticle extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 5),
-                        child: Text(
-                          title ?? "No title",
-                          style: TextStyle(
-                              fontSize: 32, fontWeight: FontWeight.bold),
+                  Flexible(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
+                          child: Wrap(
+                             children: 
+                              [Text(
+                                title ?? "No title",
+                                style: TextStyle(
+                                    fontSize: 32, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 1),
-                        child: Text(
-                          author ?? "No author",
-                          style:
-                              TextStyle(fontSize: 20, color: Colors.grey[500]),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 1),
+                          child: Text(
+                            author ?? "No author",
+                            style:
+                                TextStyle(fontSize: 20, color: Colors.grey[500]),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      )
-                    ],
+                        SizedBox(
+                          height: 8,
+                        )
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),

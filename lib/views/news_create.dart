@@ -15,7 +15,13 @@ class _CreateNewsState extends State<CreateNews> {
   String author, title, content, imgUrl;
   int claps;
 
-  File selectedImage;
+  File _selectedImage;
+
+  File get selectedImage => _selectedImage;
+
+  set selectedImage(File selectedImage) {
+    _selectedImage = selectedImage;
+  }
   bool _isLoading = false;
   CrudMethods crudMethods = new CrudMethods();
 

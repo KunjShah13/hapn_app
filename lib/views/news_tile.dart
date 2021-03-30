@@ -60,24 +60,32 @@ class NewsTile extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    child: Text(
-                      title,
-                      style: TextStyle(fontSize: 24),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
-                    child: Text(
-                      author,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  )
-                ]),
+                Flexible(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 5),
+                          child: Wrap(
+                            children: [
+                              Text(
+                                title,
+                                style: TextStyle(fontSize: 24),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 1),
+                          child: Text(
+                            author,
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        )
+                      ]),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(

@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                   stream: articleStream,
                   builder: (context, snapshot) {
                     if (snapshot.data == null)
-                      return CircularProgressIndicator();
+                      return Center(child: CircularProgressIndicator());
                     else
                       return Column(children: [
                         Padding(padding: EdgeInsets.all(20)),
