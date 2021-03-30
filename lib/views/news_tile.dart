@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hapn_app/views/news_full.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class NewsTile extends StatelessWidget {
   String imgURL, title, content, author;
@@ -53,8 +51,8 @@ class NewsTile extends StatelessWidget {
                   height: 300,
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(7),
-                      child: CachedNetworkImage(
-                        imageUrl: imgURL,
+                      child: Image.network(
+                        imgURL,
                         width: MediaQuery.of(context).size.width,
                         fit: BoxFit.cover,
                       )),

@@ -2,7 +2,7 @@
     package="com.example.hapn_app">
    <application
         android:label="hapn_app"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/launcher_icon"
         android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"

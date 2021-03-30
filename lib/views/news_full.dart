@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,7 @@ class FullArticle extends StatelessWidget {
         children: [
           Hero(
             tag: "$title",
-            child: CachedNetworkImage(imageUrl: imgURL),
+            child: Image.network(imgURL),
           ),
           Container(
               decoration: BoxDecoration(color: Colors.grey[800]),
