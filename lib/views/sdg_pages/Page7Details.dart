@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page9 extends StatelessWidget {
-
-
+class Page7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page9 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-9',child: Image.asset(
-                        ('imag/goal-09_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-7',
+                        child: Image.asset(
+                          ('image/goal-07_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page9 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page9 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page9 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation',
+                'Ensure access to affordable, reliable, sustainable, and modern energy for all.',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page9 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Establish standards and promote regulations that ensure company projects and initiatives are sustainably managed. Collaborate with NGOs and the public sector to help promote sustainable growth within developing countries. Think about how industry impacts on your life and well-being and use social media to push for policymakers to prioritize the SDGs.',
+                'Countries can accelerate the transition to an affordable, reliable, and sustainable energy system by investing in renewable energy resources, prioritizing energy efficient practices, and adopting clean energy technologies and infrastructure. Businesses can maintain and protect ecosystems and commit to sourcing 100% of operational electricity needs from renewable sources. Employers can reduce the internal demand for transport by prioritizing telecommunications and incentivize less energy intensive modes such as train travel over auto and air travel. Investors can invest more in sustainable energy services, bringing new technologies to the market quickly from a diverse supplier base. You can save electricity by plugging appliances into a power strip and turning them off completely when not in use, including your computer. You can also bike, walk, or take public transport to reduce carbon emissions.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page9 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

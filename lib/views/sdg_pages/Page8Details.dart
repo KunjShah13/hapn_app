@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page13 extends StatelessWidget {
-
-
+class Page8 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page13 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-13',child: Image.asset(
-                        ('imag/goal-13_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-8',
+                        child: Image.asset(
+                          ('image/goal-08_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page13 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page13 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page13 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Take urgent action to combat climate change and its impacts.',
+                'Promote sustained, inclusive, and sustainable economic growth, full and productive employment, and decent work for all',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page13 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'There are lots of ways to help, for example: Weatherize your home and power it with renewable energy, invest in energy-efficient appliances, reduce water waste, eat the food you buy and make less of it meat, buy better bulbs, pull the plugs, drive a full-efficient vehicle, rethink planes, trains and automobiles, and shrink your carbon profile.',
+                'Providing youth with the best opportunity to transition to a decent job calls for investing in education and training of the highest possible quality, providing youth with skills that match labour market demands, giving them access to social protection and basic services regardless of their contract type, as well as levelling the playing field. This way all aspiring youth can attain productive employment regardless of their gender, income level, or socio-economic background. Governments can work to build dynamic, sustainable, innovative, and people-centered economies In particular, they may promote youth employment and women’s economic empowerment, as well as decent work for all. Implementing adequate health and safety measures and promoting supportive working environments are fundamental to protecting the safety of workers; especially health workers and those providing essential services.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page13 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

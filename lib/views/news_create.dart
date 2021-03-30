@@ -12,7 +12,7 @@ class CreateNews extends StatefulWidget {
 
 class _CreateNewsState extends State<CreateNews> {
   // final News news = new News();
-  String author, title, content,imgUrl;
+  String author, title, content, imgUrl;
   int claps;
 
   File selectedImage;
@@ -49,8 +49,7 @@ class _CreateNewsState extends State<CreateNews> {
 
       final UploadTask task = ref.putFile(selectedImage);
 
-      imgUrl =
-          await (await task.whenComplete(() => null)).ref.getDownloadURL();
+      imgUrl = await (await task.whenComplete(() => null)).ref.getDownloadURL();
 
       Map<String, dynamic> newsMap = {
         "imgURL": imgUrl,
@@ -92,7 +91,7 @@ class _CreateNewsState extends State<CreateNews> {
             },
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.file_upload, color: Colors.blue,),
+              child: Icon(Icons.file_upload),
             ),
           )
         ],
@@ -165,7 +164,7 @@ class _CreateNewsState extends State<CreateNews> {
                         ),
                         Padding(padding: EdgeInsets.all(10)),
                         TextField(
-                          decoration: InputDecoration(hintText: "Whatever"),
+                          decoration: InputDecoration(hintText: "Article Description"),
                           onChanged: (val) {
                             content = val;
                           },

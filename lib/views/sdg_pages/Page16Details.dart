@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page14 extends StatelessWidget {
-
-
+class Page16 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page14 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-14',child: Image.asset(
-                        ('imag/goal-14_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-16',
+                        child: Image.asset(
+                          ('image/goal-16_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page14 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page14 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page14 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Conserve and sustainably use the oceans, seas, and marine resources for sustainable development',
+                'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page14 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'For open ocean and deep sea areas, sustainability can be achieved only through increased international cooperation to protect vulnerable habitats. Establishing comprehensive, effective, and equitably managed systems of government-protected areas should be pursued to conserve biodiversity and ensure a sustainable future for the fishing industry. On a local level, we should make ocean-friendly choices when buying products or eating food derived from oceans and consume only what we need. Selecting certified products is a good place to start. We should eliminate plastic usage as much as possible and organize beach clean-ups. Most importantly, we can spread the message about how important marine life is and why we need to protect it.',
+                'Exercise your right to hold your elected officials accountable. Exercise your right to freedom of information and share your opinion with your elected representatives. Promote inclusion and respect towards people of different ethnic origins, religions, gender, sexual orientations, or different opinions. Together, we can help to improve conditions for a life of dignity for all.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page14 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

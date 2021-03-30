@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page6 extends StatelessWidget {
-
-
+class Page9 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page6 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-6',child: Image.asset(
-                        ('imag/goal-06_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-9',
+                        child: Image.asset(
+                          ('image/goal-09_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page6 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page6 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page6 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Ensure availability and sustainable management of water and sanitation for all',
+                'Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page6 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Civil society organizations should work to keep governments accountable, invest in water research and development, and promote the inclusion of women, youth, and indigenous communities in water resources governance. Generating awareness of these roles and turning them into action will lead to win-win results and increased sustainability and integrity for both human and ecological systems. You can also get involved in the World Water Day and World Toilet Day campaigns that aim to provide information and inspiration to take action on hygiene issues.',
+                'Establish standards and promote regulations that ensure company projects and initiatives are sustainably managed. Collaborate with NGOs and the public sector to help promote sustainable growth within developing countries. Think about how industry impacts on your life and well-being and use social media to push for policymakers to prioritize the SDGs.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page6 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page11 extends StatelessWidget {
-
-
+class Page13 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page11 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-11',child: Image.asset(
-                        ('imag/goal-11_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-13',
+                        child: Image.asset(
+                          ('image/goal-13_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page11 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page11 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page11 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Make cities and human settlements inclusive, safe, resilient, and sustainable',
+                'Take urgent action to combat climate change and its impacts.',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page11 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Take an active interest in the governance and management of your city. Advocate for the kind of city you believe you need. Develop a vision for your building, street, and neighbourhood, and act on that vision. Are there enough jobs? Can your children walk to school safely? Can you walk with your family at night? How far is the nearest public transport? What’s the air quality like? What are your shared public spaces like? The better the conditions you create in your community, the greater the effect on quality of life.',
+                'There are lots of ways to help, for example: Weatherize your home and power it with renewable energy, invest in energy-efficient appliances, reduce water waste, eat the food you buy and make less of it meat, buy better bulbs, pull the plugs, drive a full-efficient vehicle, rethink planes, trains and automobiles, and shrink your carbon profile.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page11 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

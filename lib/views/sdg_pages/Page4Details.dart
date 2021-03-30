@@ -1,10 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
-class Page8 extends StatelessWidget {
-
-
+class Page4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +13,18 @@ class Page8 extends StatelessWidget {
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-
                 background: Stack(
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: double.infinity,
-                      child: Hero(tag:'goal-8',child: Image.asset(
-                        ('imag/goal-08_480.png'),////////////////////////////Image
-                        fit: BoxFit.cover,
-                      ),),
+                      child: Hero(
+                        tag: 'goal-4',
+                        child: Image.asset(
+                          ('image/goal-04_480.png'), ////////////////////////////Image
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -46,10 +44,9 @@ class Page8 extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
                           Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 10.0),
+                                const EdgeInsets.symmetric(horizontal: 10.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -57,13 +54,11 @@ class Page8 extends StatelessWidget {
                                 Container(
                                   height: 45,
                                   decoration:
-                                  BoxDecoration(shape: BoxShape.circle),
+                                      BoxDecoration(shape: BoxShape.circle),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(100),
-
                                   ),
                                 ),
-
                               ],
                             ),
                           )
@@ -83,7 +78,7 @@ class Page8 extends StatelessWidget {
           child: ListView(
             children: [
               Text(
-                'Promote sustained, inclusive, and sustainable economic growth, full and productive employment, and decent work for all',
+                'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 24,
@@ -93,7 +88,7 @@ class Page8 extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Providing youth with the best opportunity to transition to a decent job calls for investing in education and training of the highest possible quality, providing youth with skills that match labour market demands, giving them access to social protection and basic services regardless of their contract type, as well as levelling the playing field. This way all aspiring youth can attain productive employment regardless of their gender, income level, or socio-economic background. Governments can work to build dynamic, sustainable, innovative, and people-centered economies In particular, they may promote youth employment and women’s economic empowerment, as well as decent work for all. Implementing adequate health and safety measures and promoting supportive working environments are fundamental to protecting the safety of workers; especially health workers and those providing essential services.',
+                'Ask our governments to place education as a priority in both policy and practice. Lobby our governments to make firm commitments to provide free primary school education to all, including vulnerable or marginalized groups.',
                 style: TextStyle(
                   fontSize: 18,
                 ),
@@ -101,13 +96,6 @@ class Page8 extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-
-
-
-
-
-
-
             ],
           ),
         ),

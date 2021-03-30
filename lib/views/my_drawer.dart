@@ -78,7 +78,6 @@ class MyDrawer extends StatelessWidget {
               ],
             ),
             onTap: () {
-              // TODO About screen
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => AboutApp()));
             },
