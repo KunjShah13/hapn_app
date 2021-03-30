@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hapn_app/views/homePage.dart';
 
 class SignIn extends StatefulWidget {
+  final Function toggleView;
+
+  SignIn({this.toggleView});
+
   @override
   _SignInState createState() => _SignInState();
 }
@@ -13,6 +16,7 @@ class _SignInState extends State<SignIn> {
   final TextEditingController _emailController = TextEditingController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,13 +68,28 @@ class _SignInState extends State<SignIn> {
                 Container(
                   padding: const EdgeInsets.only(top: 16.0),
                   alignment: Alignment.center,
-                  child: OutlinedButton(
-                    child: Text("Sign In"),
-                    onPressed: () async {
-                      if (_formKey.currentState.validate()) {
-                        _signInWithEmailAndPassword();
-                      }
-                    },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      OutlinedButton(
+                        child: Text("Sign In"),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            _signInWithEmailAndPassword();
+                          }
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      OutlinedButton(
+                        onPressed: () {
+                          print("here");
+                          widget.toggleView();
+                        },
+                        child: Text("Register"),
+                      )
+                    ],
                   ),
                 ),
               ],
@@ -96,21 +115,20 @@ class _SignInState extends State<SignIn> {
       if (!user.emailVerified) {
         await user.sendEmailVerification();
       }
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
-        return HomePage(
-          user: user,
-        );
-      }));
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+      //   return HomePage(
+      //     user: user,
+      //   );
+      // }));
     } catch (e) {
       // ignore: deprecated_member_use
       Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("Failed to sign in with Email & Password")
-        ,
+        content: Text("Failed to sign in with Email & Password"),
       ));
     }
   }
 
-  void _signOut() async {
-    await _auth.signOut();
-  }
+  // void _signOut() async {
+  //   await _auth.signOut();
+  // }
 }

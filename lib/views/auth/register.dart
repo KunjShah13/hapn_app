@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:country_state_city_picker/country_state_city_picker.dart';
 
 class Register extends StatefulWidget {
+  final Function toggleView;
+
+  Register({this.toggleView});
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -37,88 +40,101 @@ class _RegisterState extends State<Register> {
               child: Card(
                 child: Padding(
                   padding: EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child: const Text(
-                          'Register New User',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          child: const Text(
+                            'Register New User',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ),
-                      ),
-                      TextFormField(
-                        controller: _displayName,
-                        decoration: const InputDecoration(labelText: 'Full Name'),
-                        validator: (String value) {
-                          if (value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        controller: _emailController,
-                        decoration: const InputDecoration(labelText: 'Email'),
-                        validator: (String value) {
-                          if (value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
-                      ),
-                      TextFormField(
-                        controller: _passwordController,
-                        decoration: const InputDecoration(labelText: 'Password'),
-                        validator: (String value) {
-                          if (value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
-                        obscureText: true,
-                      ),
-                      SizedBox(height: 20,),
-                      Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          height: 180,
-                          child:
-                          Column(
-                            children: [
-                              SelectState(
-                                // style: TextStyle(color: Colors.red),
-                                onCountryChanged: (value) {
-                                  setState(() {
-                                    countryValue = value;
-                                  });
-                                },
-                                onStateChanged:(value) {
-                                  setState(() {
-                                    stateValue = value;
-                                  });
-                                },
-                                onCityChanged:(value) {
-                                  setState(() {
-                                    cityValue = value;
-                                  });
-                                },
-
-                              ),
-                            ],
-                          )
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: OutlinedButton(
-                          child: Text("register"),
-                          onPressed: () async {
-                            if (_formKey.currentState.validate()) {
-                              _registerAccount();
+                        TextFormField(
+                          controller: _displayName,
+                          decoration:
+                              const InputDecoration(labelText: 'Full Name'),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
                             }
+                            return null;
                           },
                         ),
-                      ),
-                    ],
+                        TextFormField(
+                          controller: _emailController,
+                          decoration: const InputDecoration(labelText: 'Email'),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
+                            }
+                            return null;
+                          },
+                        ),
+                        TextFormField(
+                          controller: _passwordController,
+                          decoration:
+                              const InputDecoration(labelText: 'Password'),
+                          validator: (String value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
+                            }
+                            return null;
+                          },
+                          obscureText: true,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            height: 180,
+                            child: Column(
+                              children: [
+                                SelectState(
+                                  // style: TextStyle(color: Colors.red),
+                                  onCountryChanged: (value) {
+                                    setState(() {
+                                      countryValue = value;
+                                    });
+                                  },
+                                  onStateChanged: (value) {
+                                    setState(() {
+                                      stateValue = value;
+                                    });
+                                  },
+                                  onCityChanged: (value) {
+                                    setState(() {
+                                      cityValue = value;
+                                    });
+                                  },
+                                ),
+                              ],
+                            )),
+                        Column(
+                            // alignment: Alignment.center,
+                            children: [
+                              OutlinedButton(
+                                child: Text("register"),
+                                onPressed: () async {
+                                  if (_formKey.currentState.validate()) {
+                                    _registerAccount();
+                                  }
+                                },
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              OutlinedButton(
+                                child: Text("Sign In"),
+                                onPressed: () {
+                                  widget.toggleView();
+                                },
+                              ),
+                            ]),
+                      ],
+                    ),
                   ),
                 ),
               )),
@@ -142,8 +158,8 @@ class _RegisterState extends State<Register> {
       final user1 = _auth.currentUser;
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => HomePage(
-            user: user1,
-          )));
+                user: user1,
+              )));
     } else {
       _isSuccess = false;
     }

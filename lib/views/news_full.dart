@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class FullArticle extends StatelessWidget {
   //final News news;
   //FullArticle({this.news});
-  String imgURL, title, content, author;
+  final String imgURL, title, content, author;
   int claps;
   FullArticle(
       {@required this.author,
@@ -66,7 +66,7 @@ class FullArticle extends StatelessWidget {
                           width: 5,
                         ),
                         Text(
-                          claps.toString() ?? "0",
+                          claps == null ? "2" : claps.toString(),
                           style: TextStyle(
                             fontSize: 18,
                           ),
@@ -76,6 +76,25 @@ class FullArticle extends StatelessWidget {
                   )
                 ],
               )),
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(color: Colors.grey[700]),
+            child: Wrap(
+              spacing: 10,
+              children: [
+                Chip(
+                    label: Text(
+                  "No Poverty",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+                )),
+                Chip(
+                    label: Text(
+                  "Gender Equality",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
+                )),
+              ],
+            ),
+          ),
           Padding(
             padding: EdgeInsets.all(10),
             child: Text(
