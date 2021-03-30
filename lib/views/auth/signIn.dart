@@ -20,6 +20,17 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text.rich(TextSpan(
+            text: "HAP",
+            style: TextStyle(fontSize: 22),
+            children: [
+              TextSpan(
+                  text: "N", style: TextStyle(fontSize: 22, color: Colors.blue))
+            ])),
+        backgroundColor: Colors.transparent,
+      ),
       key: _scaffoldKey,
       body: Builder(builder: (BuildContext context) {
         return Column(
