@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hapn_app/Controllers/auth.dart';
 import 'package:hapn_app/views/my_drawer.dart';
 import 'package:hapn_app/views/news_tile.dart';
 import 'package:hapn_app/views/news_create.dart';
+import 'package:hapn_app/views/user_info.dart';
 import 'package:hapn_app/controllers/crud.dart';
 
 class HomePage extends StatefulWidget {
@@ -103,6 +105,26 @@ class _HomePageState extends State<HomePage> {
             ])),
         backgroundColor: Colors.transparent,
         elevation: 3.0,
+        actions: [
+          GestureDetector(
+            onTap: () async {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => UserInfoWidget(auth: AuthController())));
+              // await AuthController().signOut();
+            },
+            child: Container(
+              margin: EdgeInsets.all(2),
+              padding: EdgeInsets.only(right: 15),
+              child: Hero(
+                tag: 'avatar',
+                child: CircleAvatar(
+                  backgroundImage:
+                      NetworkImage("https://i.pravatar.cc/150?img=3"),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
       drawer: MyDrawer(),
       body: newsArticles(),
