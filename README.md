@@ -15,7 +15,7 @@ https://drive.google.com/file/d/1y1v-WT6r3HP4Ke2OLMf9mUlNrna_J0BK/view?usp=shari
 (This is the profile version of the apk build )
 
 Or you can build the apk yourself by following the below steps:
-1. Clone the hapn_app repository onto your computer or download the repository as a zip file.
+1. Clone the hapn_app repository(develop branch) onto your computer or download the repository as a zip file.
 2. Then open the downloaded folder (or unzip if downloaded as a zip file) in either the VSCode or Android Studio with flutter SDK installed beforehand and appropriate flutter extentions.
 3. Then open the terminal and Run the command *flutter pub get*.
 This will download necessary flutter packages to run the app.
