@@ -1,5 +1,4 @@
-
-class News{
+class News {
   String title;
   String content;
   String author;
@@ -7,13 +6,11 @@ class News{
   DateTime date;
   int claps;
 
-  News({
-    this.title,
-    this.content,
-    this.author,
-    this.imageURL,
-    this.date,
-    this.claps
-});
-
+  News(
+      {this.title,
+      this.content,
+      this.author,
+      this.imageURL,
+      this.date,
+      this.claps});
 }

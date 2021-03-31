@@ -1,77 +1,149 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hapn_app/models/news.dart';
+import 'package:hapn_app/Controllers/auth.dart';
 import 'package:hapn_app/views/my_drawer.dart';
 import 'package:hapn_app/views/news_tile.dart';
+import 'package:hapn_app/views/news_create.dart';
+import 'package:hapn_app/views/user_info.dart';
+import 'package:hapn_app/controllers/crud.dart';
 
 class HomePage extends StatefulWidget {
+  final User user;
+
+  const HomePage({Key key, this.user}) : super(key: key);
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  //final News news = new News();
+
+  CrudMethods crudMethods = new CrudMethods();
+
+  Stream articleStream =
+      FirebaseFirestore.instance.collection('articles').snapshots();
+
+  Widget newsArticles() {
+    return ListView(children: [
+      articleStream != null
+          ? Column(
+              children: <Widget>[
+                StreamBuilder(
+                  stream: articleStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.data == null)
+                      return Center(child: CircularProgressIndicator());
+                    else
+                      return Column(children: [
+                        Padding(padding: EdgeInsets.all(20)),
+                        Text(
+                          "News Articles",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w300,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Padding(padding: EdgeInsets.fromLTRB(10, 20, 0, 15)),
+                        ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            itemCount: snapshot.data.docs.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return NewsTile(
+                                author:
+                                    snapshot.data.docs[index].data()['author'],
+                                title:
+                                    snapshot.data.docs[index].data()['title'],
+                                content:
+                                    snapshot.data.docs[index].data()['content'],
+                                imgURL:
+                                    snapshot.data.docs[index].data()['imgURL'],
+                                claps:
+                                    snapshot.data.docs[index].data()['claps'],
+                              );
+                            })
+                      ]);
+                  },
+                )
+              ],
+            )
+          : Container(
+              padding: EdgeInsets.all(50),
+              alignment: Alignment.center,
+              child: CircularProgressIndicator(),
+            ),
+    ]);
+  }
+
+  @override
+  void initState() {
+    crudMethods.getData().then((result) {
+      setState(() {
+        articleStream = result;
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
-        title: Text.rich(
-          TextSpan(
+        title: Text.rich(TextSpan(
             text: "HAP",
-            style: TextStyle(
-              fontSize: 22
-            ),
+            style: TextStyle(fontSize: 22),
             children: [
               TextSpan(
-                text: "N",
-                style: TextStyle(
-                  fontSize: 22,
-                  color: Colors.blue
-                )
-              )
-            ]
-          )
-        ),
+                  text: "N", style: TextStyle(fontSize: 22, color: Colors.blue))
+            ])),
         backgroundColor: Colors.transparent,
         elevation: 3.0,
+        actions: [
+          GestureDetector(
+            onTap: () async {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => UserInfoWidget(auth: AuthController())));
+              // await AuthController().signOut();
+            },
+            child: Container(
+              margin: EdgeInsets.all(2),
+              padding: EdgeInsets.only(right: 15),
+              child: Hero(
+                tag: 'avatar',
+                child: CircleAvatar(
+                  backgroundImage:
+                      NetworkImage("https://i.pravatar.cc/150?img=3"),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
       drawer: MyDrawer(),
-      body: NewsArticles(),
-    );
-  }
-}
-
-class NewsArticles extends StatefulWidget {
-  @override
-  _NewsArticlesState createState() => _NewsArticlesState();
-}
-
-class _NewsArticlesState extends State<NewsArticles> {
-  final List<News> articles = [
-    News(title: "Title 1", author: "Author", claps: 5),
-    News(title: "Title 2", author: "Author", claps: 4),
-    News(title: "Title 3", author: "Author", claps: 3),
-    News(title: "Title 4", author: "Author", claps: 2),
-  ]; // Temporary list, actual data from firestore
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children:[
-        Container(
-          padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
-          child: Text(
-            "News Articles",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold
-            ),
-          ),
+      body: newsArticles(),
+      floatingActionButton: Container(
+        padding: EdgeInsets.symmetric(vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            FloatingActionButton(
+              backgroundColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateNews()));
+              },
+              child: Icon(Icons.add),
+            )
+          ],
         ),
-        ...articles.map((article) =>
-            NewsTile(news: article))
-            .toList(),
-    ]
+      ),
     );
   }
 }

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1034821880167",
-    "project_id": "hapn-9af06",
-    "storage_bucket": "hapn-9af06.appspot.com"
+    "project_number": "198149436429",
+    "project_id": "hapnapp-e11e9",
+    "storage_bucket": "hapnapp-e11e9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1034821880167:android:28e8ce38c44117b72ec7c2",
+        "mobilesdk_app_id": "1:198149436429:android:1f4d9e7dbc61e2b7701144",
         "android_client_info": {
-          "package_name": "com.example.hapn"
+          "package_name": "com.example.hapn_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1034821880167-u1ih1fj5beirih2r96tushu3j1o0p3hh.apps.googleusercontent.com",
+          "client_id": "198149436429-32i32ocfcf38v1rdf4ag997cflnbb4g8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCLmRJAq7wWvuYompDpFxNc64Fhpuou_DQ"
+          "current_key": "AIzaSyB1LWqVif3GMPGsn1cuHgLxDDf1jPYIHjs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1034821880167-u1ih1fj5beirih2r96tushu3j1o0p3hh.apps.googleusercontent.com",
+              "client_id": "198149436429-32i32ocfcf38v1rdf4ag997cflnbb4g8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
