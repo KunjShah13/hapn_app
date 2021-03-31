@@ -2,7 +2,7 @@
 
 Our Submission to _Google DSC Solution Challenge 2021_
 
-This app aims to solve *UN Goal-11 Sustainable Cities* challenge.
+This app aims to solve *UN Goal-11 Sustainable Cities* challenge(also part of *Goal-10 Reduced Inequalites*).
 
 ## Overview
 
